@@ -187,25 +187,25 @@ with tab1:
         ax.grid(True, alpha=0.3)
         st.pyplot(fig, clear_figure=True)
 
-    with c2:
-        if monthly_pm25.notna().any():
-            peak_month = int(monthly_pm25.idxmax())
-            low_month = int(monthly_pm25.idxmin())
-            peak_value = float(monthly_pm25.max())
-            low_value = float(monthly_pm25.min())
+    # with c2:
+    #     if monthly_pm25.notna().any():
+    #         peak_month = int(monthly_pm25.idxmax())
+    #         low_month = int(monthly_pm25.idxmin())
+    #         peak_value = float(monthly_pm25.max())
+    #         low_value = float(monthly_pm25.min())
 
-            st.markdown("**Insight utama**")
-            st.write(
-                f"Rata-rata PM2.5 paling tinggi terjadi pada **{month_name(peak_month)}** "
-                f"({peak_value:.2f}), sedangkan yang paling rendah terjadi pada "
-                f"**{month_name(low_month)}** ({low_value:.2f})."
-            )
-            st.write(
-                "Pola ini menunjukkan kualitas udara cenderung memburuk pada bulan-bulan tertentu "
-                "dan membaik pada periode lain."
-            )
-        else:
-            st.info("Data tidak cukup untuk menghitung rata-rata PM2.5 per bulan.")
+    #         st.markdown("**Insight utama**")
+    #         st.write(
+    #             f"Rata-rata PM2.5 paling tinggi terjadi pada **{month_name(peak_month)}** "
+    #             f"({peak_value:.2f}), sedangkan yang paling rendah terjadi pada "
+    #             f"**{month_name(low_month)}** ({low_value:.2f})."
+    #         )
+    #         st.write(
+    #             "Pola ini menunjukkan kualitas udara cenderung memburuk pada bulan-bulan tertentu "
+    #             "dan membaik pada periode lain."
+    #         )
+    #     else:
+    #         st.info("Data tidak cukup untuk menghitung rata-rata PM2.5 per bulan.")
 
 with tab2:
     st.subheader("Pertanyaan 2: Bagaimana PM2.5 berdasarkan kategori kecepatan angin?")
@@ -224,23 +224,23 @@ with tab2:
         ax.grid(axis="y", alpha=0.3)
         st.pyplot(fig, clear_figure=True)
 
-    with c2:
-        if wind_pm25.notna().any():
-            best_category = wind_pm25.idxmin()
-            worst_category = wind_pm25.idxmax()
+    # with c2:
+    #     if wind_pm25.notna().any():
+    #         best_category = wind_pm25.idxmin()
+    #         worst_category = wind_pm25.idxmax()
 
-            st.markdown("**Insight utama**")
-            st.write(
-                f"Semakin tinggi kategori kecepatan angin, rata-rata PM2.5 cenderung menurun. "
-                f"Kategori dengan PM2.5 terendah adalah **{best_category}**, sedangkan yang tertinggi "
-                f"adalah **{worst_category}**."
-            )
-            st.write(
-                "Artinya, angin yang lebih kuat cenderung membantu menyebarkan polutan sehingga "
-                "konsentrasi PM2.5 menjadi lebih rendah."
-            )
-        else:
-            st.info("Data tidak cukup untuk menghitung rata-rata PM2.5 berdasarkan angin.")
+    #         st.markdown("**Insight utama**")
+    #         st.write(
+    #             f"Semakin tinggi kategori kecepatan angin, rata-rata PM2.5 cenderung menurun. "
+    #             f"Kategori dengan PM2.5 terendah adalah **{best_category}**, sedangkan yang tertinggi "
+    #             f"adalah **{worst_category}**."
+    #         )
+    #         st.write(
+    #             "Artinya, angin yang lebih kuat cenderung membantu menyebarkan polutan sehingga "
+    #             "konsentrasi PM2.5 menjadi lebih rendah."
+    #         )
+    #     else:
+    #         st.info("Data tidak cukup untuk menghitung rata-rata PM2.5 berdasarkan angin.")
 
 with tab3:
     st.subheader("Data Preview")
@@ -255,12 +255,12 @@ with tab3:
         mime="text/csv",
     )
 
-st.divider()
-st.subheader("Ringkasan Proses Cleaning")
-st.write(
-    "Nilai placeholder 999 pada PM2.5 dan PM10 diubah menjadi NaN, lalu diimputasi dengan median "
-    "per stasiun dan median global. Kolom wd diisi dengan modus, dan kolom No dihapus."
-)
+# st.divider()
+# st.subheader("Ringkasan Proses Cleaning")
+# st.write(
+#     "Nilai placeholder 999 pada PM2.5 dan PM10 diubah menjadi NaN, lalu diimputasi dengan median "
+#     "per stasiun dan median global. Kolom wd diisi dengan modus, dan kolom No dihapus."
+# )
 
 with st.expander("Lihat daftar file yang terbaca"):
     st.write(files_found)
