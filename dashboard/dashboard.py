@@ -242,18 +242,18 @@ with tab2:
     #     else:
     #         st.info("Data tidak cukup untuk menghitung rata-rata PM2.5 berdasarkan angin.")
 
-with tab3:
-    st.subheader("Data Preview")
-    st.write("Beberapa baris data setelah cleaning:")
-    st.dataframe(filtered_df.head(20), use_container_width=True)
+# with tab3:
+#     st.subheader("Data Preview")
+#     st.write("Beberapa baris data setelah cleaning:")
+#     st.dataframe(filtered_df.head(20), use_container_width=True)
 
-    csv_data = filtered_df.to_csv(index=False).encode("utf-8")
-    st.download_button(
-        label="Download data terfilter",
-        data=csv_data,
-        file_name="filtered_beijing_air_quality.csv",
-        mime="text/csv",
-    )
+#     csv_data = filtered_df.to_csv(index=False).encode("utf-8")
+#     st.download_button(
+#         label="Download data terfilter",
+#         data=csv_data,
+#         file_name="filtered_beijing_air_quality.csv",
+#         mime="text/csv",
+#     )
 
 # st.divider()
 # st.subheader("Ringkasan Proses Cleaning")
