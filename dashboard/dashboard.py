@@ -262,5 +262,5 @@ with tab2:
 #     "per stasiun dan median global. Kolom wd diisi dengan modus, dan kolom No dihapus."
 # )
 
-with st.expander("Lihat daftar file yang terbaca"):
-    st.write(files_found)
+# with st.expander("Lihat daftar file yang terbaca"):
+#     st.write(files_found)
